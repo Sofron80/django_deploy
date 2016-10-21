@@ -1,0 +1,35 @@
+apt-get update
+apt-get upgrade
+apt-get install nginx
+apt-get install uwsgi
+apt-get install git
+
+apt-get install python3-dev python3-setuptools
+easy_install-3.4 virtualenv
+
+
+
+adduser django
+usermod -aG www-data django
+login django
+
+Создаем каталог для сайта
+mkdir /home/django/mysite
+cd /home/django/mysite
+Клонируем проект в каталог
+
+git clone https://github.com/sofron80/django_deploy.git .
+virtualenv venv
+source venv/bin/activate
+pip install django
+
+cd mysite
+chmod +x manage.py
+./manage.py migarte
+./manage.py runserver
+
+ln -s /home/django/mysite/conf/nginx.conf /etc/nginx/sites-enabled/
+mkdir /etc/uwsgi/vassals
+
+rm /etc/nginx/sites-enabled/default
+
