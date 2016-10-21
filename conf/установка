@@ -28,7 +28,7 @@ chmod +x manage.py
 ./manage.py migarte
 ./manage.py runserver
 
-ln -s /home/django/mysite/conf/nginx.conf /etc/nginx/sites-enabled/
+ln -s /home/django/mysite/mysite/nginx.conf /etc/nginx/sites-enabled/
 mkdir /etc/uwsgi/vassals
 
 rm /etc/nginx/sites-enabled/default
